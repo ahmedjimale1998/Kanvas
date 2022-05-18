@@ -1,6 +1,7 @@
 version: '3'
 
-services: 
+services:
+    #USERSERVICE
     userservice:
         hostname: userservice
         depends_on:
@@ -26,13 +27,83 @@ services:
        ports:
             - 5432:5432
        expose:
+            - "5432:5432"
+       volumes: 
+        - user_db:/var/lib/postgresql/data
+
+    #MAILSERVICE
+    mailservice:
+        hostname: mailservice
+        depends_on:
+            - "mail_db"
+        build:
+            dockerfile: ./MailService/Dockerfile
+        ports:
+            - "81:81"
+        environment:
+            - ASPNETCORE_URLS=http://+:81
+            - ConnectionStrings:DefaultConnection=Server=host.docker.internal;Port=5433;Database=postgres;User Id=postgres;Password=mailservice;
+        network_mode: host
+
+
+    mail_db:
+       hostname: mail_db
+       image: postgres
+       restart: always
+       environment:
+            POSTGRES_DB: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: mailservice
+       ports:
+            - 5433:5432
+       expose:
             - "5433:5432"
        volumes: 
-        - db:/var/lib/postgresql/data
+        - mail_db:/var/lib/postgresql/data
 volumes:
-    db:
+    user_db:
+        driver: local
+    mail_db:
         driver: local
 
+
+
+
+
+# version: '3'
+
+# services: 
+#     userservice:
+#         hostname: userservice
+#         depends_on:
+#             - "user_db"
+#         build:
+#             dockerfile: ./UserService/Dockerfile
+#         ports:
+#             - "80:80"
+#         environment:
+#             - ASPNETCORE_URLS=http://+:80
+#             - ConnectionStrings:DefaultConnection=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
+#         network_mode: host
+
+
+#     user_db:
+#        hostname: user_db
+#        image: postgres
+#        restart: always
+#        environment:
+#             POSTGRES_DB: postgres
+#             POSTGRES_USER: postgres
+#             POSTGRES_PASSWORD: password
+#        ports:
+#             - 5432:5432
+#        expose:
+#             - "5433:5432"
+#        volumes: 
+#         - db:/var/lib/postgresql/data
+# volumes:
+#     db:
+#         driver: local
 
 
 

@@ -5,7 +5,12 @@
       "ProjectGuid": "ea932a10-8479-4432-b5b7-ba181eb25764",
       "DisplayName": "UserService",
       "ColorIndex": 0
+    },
+    "dc9ae783-9289-4d9a-baa7-915c9b589834": {
+      "ProjectGuid": "dc9ae783-9289-4d9a-baa7-915c9b589834",
+      "DisplayName": "MailService",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

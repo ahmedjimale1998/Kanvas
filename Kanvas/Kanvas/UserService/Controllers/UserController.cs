@@ -20,8 +20,6 @@ namespace UserService.Controllers
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] AddUserDTO userDTO)
         {
-            var kijk = System.IO.Directory.GetCurrentDirectory();
-
             var user = userDTO.Adapt<User>();
             user.Id = Guid.NewGuid();
             var savedUser = await userRepo.Add(user);

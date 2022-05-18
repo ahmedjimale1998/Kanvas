@@ -14,17 +14,17 @@ namespace UserService.Repository
 
         public async Task<User> Add(User user)
         {
-            await Task.FromResult(context.User.Add(user));
-            var addedUser = await Get(user.Id);
-            var uses = await GetAllUsers();
+            var connection = context.Database.CanConnect();
+            context.User.Add(user);
             context.SaveChanges();
-            return addedUser;
+            return await Get(user.Id); ;
         }
 
         public async Task Delete(Guid guid)
         {
             var user = await Get(guid);
             await Task.FromResult(context.User.Remove(user));
+            context.SaveChanges();
         }
 
         public async Task<User> Get(Guid id)
@@ -47,6 +47,7 @@ namespace UserService.Repository
         public async Task Update(User user)
         {
             await Task.FromResult(context.User.Add(user));
+            context.SaveChanges();
         }
 
         public Task<List<User>> GetAllUsersByClassId(int id)

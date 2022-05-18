@@ -13,9 +13,7 @@ namespace UserService
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-
                     webBuilder.UseStartup<Startup>();
-
                 });
     }
 }
