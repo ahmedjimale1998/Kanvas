@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NTKQPG2VX2C4XLw5b5JYn5QHauMfJG2D+ADQYFhPr86qEnDtJMfkNMrxRKxkebglJRWb0T05uSGzirTYwknd6Q==",
+  "dgSpecHash": "ZWye7amBbaRLvA11ayfYDsVdknaf9bTYKq+ZPboSIm67p/MhCX5VlZt0Aoq63dVTN30gTj3D6Y4mR6YZrcUTBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\UserService\\UserService.csproj",
+  "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\Kanvas\\UserService\\UserService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ah_me\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

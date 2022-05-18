@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\UserService\\UserService.csproj": {}
+    "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\Kanvas\\UserService\\UserService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\UserService\\UserService.csproj": {
+    "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\Kanvas\\UserService\\UserService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\UserService\\UserService.csproj",
+        "projectUniqueName": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\Kanvas\\UserService\\UserService.csproj",
         "projectName": "UserService",
-        "projectPath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\UserService\\UserService.csproj",
+        "projectPath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\Kanvas\\UserService\\UserService.csproj",
         "packagesPath": "C:\\Users\\ah_me\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\UserService\\obj\\",
+        "outputPath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\Kanvas\\Kanvas\\UserService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ah_me\\AppData\\Roaming\\NuGet\\NuGet.Config",
