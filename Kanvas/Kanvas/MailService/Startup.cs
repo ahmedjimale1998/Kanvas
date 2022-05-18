@@ -30,7 +30,6 @@ namespace MailService
             {
                 var connString = Configuration.GetConnectionString("MyConnectionString");
                 options.UseNpgsql(connString);
-
             });
 
             services.AddTransient<IMailRepository, MailRepository>();
@@ -54,7 +53,7 @@ namespace MailService
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
-            context.Database.Migrate();
+            /*context.Database.Migrate();*/
         }
     }
 }
