@@ -10,17 +10,20 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env: 
+      working-directory: ./Kanvas/Kanvas/
 
 
     steps:
-    - working-directory: ./Kanvas/Kanvas/
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: | 
+        working-directory: ${{env.working-directory}}
+        dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
