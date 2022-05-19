@@ -37,7 +37,7 @@ namespace EmailService.Test
         }
 
         [Fact]
-        public void GetUser()
+        public void GetMail()
         {
             var mailRepository = new MailRepository(_context);
 
