@@ -12,7 +12,7 @@ services:
             - "80:80"
         environment:
             - ASPNETCORE_URLS=http://+:80
-            - ConnectionStrings:DefaultConnection=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
+            - ConnectionStrings:MyConnectionStringmk=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
         network_mode: host
 
 
@@ -42,7 +42,7 @@ services:
             - "81:81"
         environment:
             - ASPNETCORE_URLS=http://+:81
-            - ConnectionStrings:DefaultConnection=Server=host.docker.internal;Port=5433;Database=postgres;User Id=postgres;Password=mailservice;
+            - ConnectionStrings:MyConnectionString=Server=host.docker.internal;Port=5433;Database=postgres;User Id=postgres;Password=mailservice;
         network_mode: host
 
 
