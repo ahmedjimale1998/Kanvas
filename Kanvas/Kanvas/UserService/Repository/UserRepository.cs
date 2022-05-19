@@ -7,6 +7,7 @@ namespace UserService.Repository
     public class UserRepository : IUserRepository
     {
         private readonly UserContext context;
+
         public UserRepository(UserContext context)
         {
             this.context = context;

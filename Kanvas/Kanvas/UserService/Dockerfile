@@ -7,8 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Kanvas/Kanvas/UserService/UserService.csproj", "UserService/"]
-RUN dotnet restore "Kanvas/Kanvas/UserService/UserService.csproj"
+COPY ["UserService/UserService.csproj", "UserService/"]
+RUN dotnet restore "UserService/UserService.csproj"
 COPY . .
 WORKDIR "/src/UserService"
 RUN dotnet build "UserService.csproj" -c Release -o /app/build

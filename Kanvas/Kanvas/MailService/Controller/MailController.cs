@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MailService.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class MailController : Microsoft.AspNetCore.Mvc.Controller
     {

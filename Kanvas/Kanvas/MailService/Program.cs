@@ -1,6 +1,6 @@
 using MailService;
 
-namespace UserService
+namespace MailService
 {
     public class Program
     {

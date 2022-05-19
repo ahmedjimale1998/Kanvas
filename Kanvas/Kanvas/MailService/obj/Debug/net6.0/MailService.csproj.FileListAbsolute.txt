@@ -25,7 +25,6 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\Ma
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.csproj.AssemblyReference.cache
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.AssemblyInfoInputs.cache
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.AssemblyInfo.cs

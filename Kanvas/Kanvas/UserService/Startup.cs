@@ -17,14 +17,6 @@ namespace UserService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /*services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    policy =>
-                    {
-                        policy.AllowAnyHeader().AllowAnyOrigin();
-                    });
-            });*/
             services.AddControllers()
                 .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
@@ -42,35 +34,10 @@ namespace UserService
             });
 
             services.AddTransient<IUserRepository, UserRepository>();
-
-            /*services.AddTransient<TweetApplication>();
-
-            services.AddTransient<IEventSender, EventSender>();
-            services.AddMassTransit(x =>
-            {
-                x.AddConsumer<UserFollowedConsumer>();
-                x.AddConsumer<UserUnfollowedConsumer>();
-                x.AddConsumer<ProfileCreatedConsumer>();
-
-                x.UsingRabbitMq((cfx, cnf) =>
-                {
-                    cnf.Host(Environment.GetEnvironmentVariable("RabbitMQConnectionString"));
-
-                    cnf.ConfigureEndpoints(cfx);
-
-                });
-
-            });*/
-            /*  services.Configure<MassTransitHostOptions>(options =>
-              {
-                  options.WaitUntilStarted = true;
-                  options.StartTimeout = TimeSpan.FromSeconds(30);
-                  options.StopTimeout = TimeSpan.FromMinutes(1);
-              });*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env/*, UserContext context*/)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -86,8 +53,6 @@ namespace UserService
             });
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-
-            /*context.Database.Migrate();*/
         }
     }
-}
+} 

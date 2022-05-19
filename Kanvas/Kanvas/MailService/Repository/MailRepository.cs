@@ -15,7 +15,6 @@ namespace MailService.Repository
 
         public async Task<Mail> Add(Mail mail)
         {
-            var connection = context.Database.CanConnect();
             context.Mail.Add(mail);
             context.SaveChanges();
             return await Get(mail.Id);
