@@ -7,8 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MailService/MailService.csproj", "MailService/"]
-RUN dotnet restore "MailService/MailService.csproj"
+COPY ["Kanvas/Kanvas/MailService/MailService.csproj", "MailService/"]
+RUN dotnet restore "Kanvas/Kanvas/MailService/MailService.csproj"
 COPY . .
 WORKDIR "/src/MailService"
 RUN dotnet build "MailService.csproj" -c Release -o /app/build

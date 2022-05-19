@@ -21,6 +21,7 @@ namespace MailService.Controller
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] MailDTO mailDTO)
         {
+            var directory = Directory.GetCurrentDirectory();
             var mail = mailDTO.Adapt<Mail>();
             mail.Id = Guid.NewGuid();
             var savedMail = await Repository.Add(mail);
