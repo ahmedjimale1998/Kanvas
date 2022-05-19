@@ -5,7 +5,11 @@ namespace MailService.Data
 {
     public class MailContext : DbContext
     {
-        public MailContext(DbContextOptions<MailContext> opt) : base(opt) { }
+        /*public MailContext(DbContextOptions<MailContext> options) : base(options) { }*/
+
+        public MailContext(DbContextOptions options) : base(options)
+        {
+        }
 
         public DbSet<Mail> Mail { get; set; }
 
