@@ -70,7 +70,7 @@ namespace UserService
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserContext context)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env/*, UserContext context*/)
         {
             if (env.IsDevelopment())
             {
@@ -87,7 +87,7 @@ namespace UserService
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
-            context.Database.Migrate();
+            /*context.Database.Migrate();*/
         }
     }
 }

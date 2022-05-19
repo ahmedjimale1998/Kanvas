@@ -10,7 +10,17 @@
       "ProjectGuid": "dc9ae783-9289-4d9a-baa7-915c9b589834",
       "DisplayName": "MailService",
       "ColorIndex": 1
+    },
+    "c88f7117-153f-4edf-b511-5f39908b3c91": {
+      "ProjectGuid": "c88f7117-153f-4edf-b511-5f39908b3c91",
+      "DisplayName": "MailService.Test",
+      "ColorIndex": 2
+    },
+    "46584ef5-c5ba-477e-bfec-7dae1af8e91c": {
+      "ProjectGuid": "46584ef5-c5ba-477e-bfec-7dae1af8e91c",
+      "DisplayName": "UserService.Test",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

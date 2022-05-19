@@ -36,7 +36,7 @@ namespace MailService
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MailContext context)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env/*,MailContext context*/)
         {
             if (env.IsDevelopment())
             {
