@@ -3,6 +3,7 @@ using MailService.Models;
 using MailService.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace EmailService.Test
@@ -66,11 +67,13 @@ namespace EmailService.Test
             var savedMail = mailRepository.Add(newMail);
             var getMails = mailRepository.GetAll();
 
+            var mail = getMails.Result.FirstOrDefault(x => x.Id == newMail.Id);
+
             //Assert
-            Assert.Single(getMails.Result);
-            Assert.Collection(getMails.Result, x => Assert.Contains("1233", x.SenderId));
-            Assert.Collection(getMails.Result, x => Assert.Contains("1233", x.ReceiverID));
-            Assert.Collection(getMails.Result, x => Assert.Contains("topic", x.Topic));
+            Assert.Equal(mail.Id, newMail.Id);
+            Assert.Equal(mail.Message, newMail.Message);
+            Assert.Equal(mail.ReceiverID, newMail.ReceiverID);
+            Assert.Equal(mail.SenderId, newMail.SenderId);
         }
 
         [Fact]

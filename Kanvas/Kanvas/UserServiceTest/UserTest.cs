@@ -67,16 +67,16 @@ namespace UserServiceTest
             var newUser = new User(Guid.NewGuid(), "Hans", "Hans@Gmail.com", "password", "Docent", 0);
 
             //Act
-            var savedMail = userRepository.Add(newUser);
-            var getMails = userRepository.GetAllUsers();
+            var savedUser = userRepository.Add(newUser);
+            var getUsers = userRepository.GetAllUsers();
 
-            var mail = getMails.Result.FirstOrDefault(x => x.Id == newUser.Id);
+            var user = getUsers.Result.FirstOrDefault(x => x.Id == newUser.Id);
 
             //Assert
-            Assert.Equal(mail.Id, newUser.Id);
-            Assert.Equal(mail.Role, newUser.Role);
-            Assert.Equal(mail.Name, newUser.Name);
-            Assert.Equal(mail.Password, newUser.Password);
+            Assert.Equal(user.Id, newUser.Id);
+            Assert.Equal(user.Role, newUser.Role);
+            Assert.Equal(user.Name, newUser.Name);
+            Assert.Equal(user.Password, newUser.Password);
         }
 
         [Fact]
