@@ -13,6 +13,7 @@ jobs:
 
 
     steps:
+    - working-directory: ./Kanvas/Kanvas/
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
