@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanvas-userservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kanvas-userservice
+  template:
+    metadata:
+      labels:
+        app: kanvas-userservice
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: kanvas-userservice
+        image: ahmedjimale1998/kanvas-userservice:latest
+        env:
+        - name: db-connection-string
+          valueFrom:
+            secretKeyRef:
+              name: db-connection-string
+              key: connectionstring
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+          name: redis
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kanvas-userservice
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: kanvas-userservice
