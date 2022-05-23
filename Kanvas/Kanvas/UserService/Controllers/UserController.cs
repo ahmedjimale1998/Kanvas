@@ -6,15 +6,17 @@ using UserService.Models;
 
 namespace UserService.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("/api/[controller]")]
     [ApiController]
     public class UserController : Controller
     {
         private readonly IUserRepository userRepo;
+        private readonly ILogger<UserController> logger;
 
-        public UserController(IUserRepository userRepo)
+        public UserController(IUserRepository userRepo, ILogger<UserController> logger)
         {
             this.userRepo = userRepo;
+            this.logger = logger;
         }
 
         [HttpPost]
@@ -38,6 +40,7 @@ namespace UserService.Controllers
         [Route("getall")]
         public async Task<IActionResult> GetAllUsers()
         {
+            this.logger.LogInformation("Get All Users");
             var users = await userRepo.GetAllUsers();
             return Ok(users);
         }
@@ -50,6 +53,7 @@ namespace UserService.Controllers
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public async Task<IActionResult> Delete(Guid guid)
         {
             await userRepo.Delete(guid);

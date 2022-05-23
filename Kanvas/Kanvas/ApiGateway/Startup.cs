@@ -22,7 +22,12 @@ namespace ApiGateway
                 endpoints.MapControllers();
             });
             //ocelot
-            await app.UseOcelot();
+            app.UseOcelot().Wait();
+
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World!");
+            });
         }
     }
 }

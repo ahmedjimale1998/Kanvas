@@ -39,3 +39,4 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\Ma
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\ref\MailService.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.pdb
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.genruntimeconfig.cache
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\MailService\obj\Debug\net6.0\MailService.csproj.AssemblyReference.cache

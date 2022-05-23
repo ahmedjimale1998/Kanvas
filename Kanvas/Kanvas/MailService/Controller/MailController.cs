@@ -1,4 +1,4 @@
-﻿using MailService.DTOs;
+﻿    using MailService.DTOs;
 using MailService.Interfaces;
 using MailService.Models;
 using Mapster;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MailService.Controller
 {
-    [Route("api/v1/[controller]")]
+    [Route("/api/[controller]")]
     [ApiController]
     public class MailController : Microsoft.AspNetCore.Mvc.Controller
     {

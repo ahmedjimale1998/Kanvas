@@ -40,3 +40,11 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\Us
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Release\net6.0\ref\UserService.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Release\net6.0\UserService.pdb
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Release\net6.0\UserService.genruntimeconfig.cache
+C:\app\build\appsettings.Development.json
+C:\app\build\appsettings.json
+C:\app\build\UserService.exe
+C:\app\build\UserService.deps.json
+C:\app\build\UserService.runtimeconfig.json
+C:\app\build\UserService.dll
+C:\app\build\ref\UserService.dll
+C:\app\build\UserService.pdb

@@ -1,18 +1,20 @@
-version: '3'
+version: '3,4'
 
 services:
     #USERSERVICE
     userservice:
         hostname: userservice
+        container_name: userservice
         depends_on:
             - "user_db"
         build:
-            dockerfile: ./UserService/Dockerfile
+            dockerfile: ./UserService.Dockerfile
         ports:
-            - "80:80"
+            - "4001:4001"
         environment:
-            - ASPNETCORE_URLS=http://+:80
-            - ConnectionStrings:MyConnectionStringmk=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
+            - ASPNETCORE_URLS=http://+:4001
+            - ConnectionStrings:MyConnectionString=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
+            - ASPNETCORE_ENVIRONMENT=Development
         network_mode: host
 
 
@@ -34,15 +36,17 @@ services:
     #MAILSERVICE
     mailservice:
         hostname: mailservice
+        container_name: mailservice
         depends_on:
             - "mail_db"
         build:
-            dockerfile: ./MailService/Dockerfile
+            dockerfile: ./MailService.Dockerfile
         ports:
-            - "81:81"
+            - "4002:4002"
         environment:
-            - ASPNETCORE_URLS=http://+:81
+            - ASPNETCORE_URLS=http://+:4002
             - ConnectionStrings:MyConnectionString=Server=host.docker.internal;Port=5433;Database=postgres;User Id=postgres;Password=mailservice;
+            - ASPNETCORE_ENVIRONMENT=Development
         network_mode: host
 
 
@@ -60,11 +64,33 @@ services:
             - "5433:5432"
        volumes: 
         - mail_db:/var/lib/postgresql/data
+
+    # GATEWAY
+    gateway:
+        container_name: gateway
+        build: 
+           dockerfile: ./ApiGateway.Dockerfile
+           context: ./Gateway/ApiGateway
+        ports: 
+            - "4003:4003"
+        links:
+            - userservice
+            - mailservice
+        depends_on:
+            - "userservice"
+            - "mailservice"
+        environment:
+            - ASPNETCORE_URLS=http://+:4003
+            - ASPNETCORE_ENVIRONMENT=Development
+        network_mode: host
+
+
 volumes:
     user_db:
         driver: local
     mail_db:
         driver: local
+
 
 
 

@@ -81,3 +81,4 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\Us
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Debug\net6.0\ref\UserService.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Debug\net6.0\UserService.pdb
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Debug\net6.0\UserService.genruntimeconfig.cache
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\UserService\obj\Debug\net6.0\UserService.csproj.AssemblyReference.cache

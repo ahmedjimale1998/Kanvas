@@ -12,11 +12,16 @@ public class Program
             Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
-                config.AddJsonFile("ocelot.json", true, true);
+                config.AddJsonFile("appsettings.json", true, true);
+                config.AddJsonFile("OcelotConfig/ocelot.json", true, true);
             })
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
-            });
+
+            })
+            .ConfigureLogging(logging => logging.AddConsole());
     }
 }
+/*"OcelotConfig/ocelot.json"*/
+
