@@ -17,12 +17,6 @@ spec:
       containers:
       - name: kanvas-userservice
         image: ahmedjimale1998/kanvas-userservice:latest
-        env:
-        - name: db-connection-string
-          valueFrom:
-            secretKeyRef:
-              name: db-connection-string
-              key: connectionstring
         resources:
           requests:
             cpu: 100m
