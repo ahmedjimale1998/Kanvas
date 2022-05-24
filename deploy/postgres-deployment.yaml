@@ -7,7 +7,7 @@ spec:
   template:
     selector:
       matchlabels:
-        app.kubernetes.io/name: postgres
+        app: postgres
     metadata:
       labels:
         app: postgres
