@@ -3,7 +3,6 @@ name: Release MailService
 on:
   push:
     branches:
-      - main
       - fix-mapstructure
     paths:
       - "./Kanvas/Kanvas/MailService/**"
@@ -42,6 +41,5 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         file: MailService.Dockerfile
-        context: ./Kanvas/Kanvas
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/kanvas-mailservice:latest
