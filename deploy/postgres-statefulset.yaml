@@ -1,0 +1,74 @@
+# PostgreSQL StatefulSet ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+	name: postgres-user-db-config
+	labels:
+		app: postgresql-user-db
+data:
+  POSTGRES_DB: postrgres
+  POSTGRES_USER: postgres
+	POSTGRES_PASSWORD: password
+	PGDATA: /data/pgdata
+---
+# PostgreSQL StatefulSet Service
+apiVersion: v1
+kind: Service
+metadata:
+	name: postgres-user-db-lb
+spec:
+	selector:
+		app: postgresql-user-db
+	type: LoadBalancer
+	ports:
+	- port: 5432
+	targetPort: 5432
+---
+# PostgreSQL StatefulSet
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+	name: postgresql-user-db
+spec:
+	serviceName: postgresql-user-db-service
+	selector:
+		matchLabels:
+			app: postgresql-user-db
+	replicas: 2
+	template:
+		metadata:
+			labels:
+				app: postgresql-user-db
+		spec:
+			# Official Postgres Container
+			containers:
+			- name: kanvas-mail_db-1
+			image: postgres
+			imagePullPolicy: IfNotPresent
+			ports:
+			- containerPort: 5432
+			# Resource Limits
+			resources:
+				requests:
+					memory: "265Mi"
+					cpu: "250m"
+				limits:
+					memory: "512Mi"
+					cpu: "500m"
+			# Data Volume
+			volumeMounts:
+			- name: postgresql-user-db-disk
+			mountPath: /data
+			# Point to ConfigMap
+			env:
+			- configMapRef:
+			name: postgresql-user-db
+# Volume Claim
+volumeClaimTemplates:
+	- metadata:
+		name: postgresql-user-db-disk
+	spec:
+		accessModes: ["ReadWriteOnce"]
+		resources:
+			requests:
+				storage: 25Gi
