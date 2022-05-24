@@ -4,12 +4,12 @@ kind: ConfigMap
 metadata:
 	name: "postgres-user-db-config"
 	labels:
-		app: postgresql-user-db
+		app: "postgresql-user-db"
 data:
   POSTGRES_DB: postrgres
   POSTGRES_USER: postgres
 	POSTGRES_PASSWORD: password
-	PGDATA: /data/pgdata
+
 ---
 # PostgreSQL StatefulSet Service
 apiVersion: v1
