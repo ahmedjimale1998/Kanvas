@@ -10,7 +10,7 @@ data:
   POSTGRES_USER: postgres
 	POSTGRES_PASSWORD: password
 
----
+
 # PostgreSQL StatefulSet Service
 apiVersion: v1
 kind: Service
@@ -23,7 +23,7 @@ spec:
 	ports:
 	- port: 5432
 	targetPort: 5432
----
+
 # PostgreSQL StatefulSet
 apiVersion: apps/v1
 kind: StatefulSet
