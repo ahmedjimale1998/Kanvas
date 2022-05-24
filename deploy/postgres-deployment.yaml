@@ -5,6 +5,9 @@ metadata:
 spec:
   replicas: 1
   template:
+    selector:
+      matchlabels:
+        app.kubernetes.io/name: postgres
     metadata:
       labels:
         app: postgres

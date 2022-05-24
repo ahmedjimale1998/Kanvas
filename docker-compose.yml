@@ -5,6 +5,7 @@ services:
     userservice:
         hostname: userservice
         container_name: userservice
+        image: postgres:latest
         depends_on:
             - "user_db"
         build:
