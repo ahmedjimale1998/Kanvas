@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanvas-mailservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kanvas-mailservice
+  template:
+    metadata:
+      labels:
+        app: kanvas-mailservice
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: kanvas-mailserviceservice
+        image: ahmedjimale/kanvas-mailservice:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+          name: redis
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kanvas-mailservice
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: kanvas-mailservice
