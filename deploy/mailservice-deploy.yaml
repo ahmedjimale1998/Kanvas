@@ -15,7 +15,7 @@ spec:
       nodeSelector:
         "beta.kubernetes.io/os": linux
       containers:
-      - name: kanvas-mailserviceservice
+      - name: kanvas-mailservice
         image: ahmedjimale/kanvas-mailservice:latest
         resources:
           requests:
