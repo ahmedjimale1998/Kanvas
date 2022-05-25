@@ -5,6 +5,10 @@ namespace UserService.Data
 {
     public class UserContext : DbContext
     {
+        public UserContext()
+        {
+        }
+
         /*public UserContext(DbContextOptions<UserContext> opt) : base(opt) { }*/
 
         public UserContext(DbContextOptions options) : base(options)

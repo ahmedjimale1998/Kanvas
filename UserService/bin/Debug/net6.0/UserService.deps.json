@@ -19,6 +19,7 @@
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.14.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.4",
+          "Serilog": "2.11.0",
           "Swashbuckle.AspNetCore": "6.3.1"
         },
         "runtime": {
@@ -286,6 +287,14 @@
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "6.0.4.0",
             "fileVersion": "6.0.4.0"
+          }
+        }
+      },
+      "Serilog/2.11.0": {
+        "runtime": {
+          "lib/net5.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.11.0.0"
           }
         }
       },
@@ -676,6 +685,13 @@
       "sha512": "sha512-fzgRmBd3nAFvKt/L70sJfFWAdobtwDEeOzOzruJq9og97O8/5B96inQOAgOpYyaUjPYpS4ZS5/bxm3vnOJ0+pQ==",
       "path": "npgsql.entityframeworkcore.postgresql/6.0.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.6.0.4.nupkg.sha512"
+    },
+    "Serilog/2.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ysv+hBzTul6Dp+Hvm10FlhJO3yMQcFKSAleus+LpiIzvNstpeV4Z7gGuIZ1OPNfIMulSHOjmLuGAEDKzpnV8ZQ==",
+      "path": "serilog/2.11.0",
+      "hashPath": "serilog.2.11.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.3.1": {
       "type": "package",

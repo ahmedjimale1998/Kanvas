@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T0cuwiQF0PTzVs+tTLTpPNTrEcSxQJFL0Jqtk7npJx9t1qGv8n+6Bn9a0OzgBFoQoQiu4KFoDHVgYP/OQAxcpQ==",
+  "dgSpecHash": "nGNTm6bQ8zk2eRWvW7bbVJo4OFTUU7QYSWaIZeeGt+QJrLjoJTsfDjhD/PDs3hn8tihDTJCVVGFMj9W83geu8g==",
   "success": true,
   "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\UserService\\UserService.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\ah_me\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.4\\npgsql.entityframeworkcore.postgresql.6.0.4.nupkg.sha512",
+    "C:\\Users\\ah_me\\.nuget\\packages\\serilog\\2.11.0\\serilog.2.11.0.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.1\\swashbuckle.aspnetcore.6.3.1.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",

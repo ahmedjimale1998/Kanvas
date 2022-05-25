@@ -5,7 +5,6 @@ services:
     userservice:
         hostname: userservice
         container_name: userservice
-        image: postgres:latest
         depends_on:
             - "user_db"
         build:
@@ -14,7 +13,7 @@ services:
             - "4001:4001"
         environment:
             - ASPNETCORE_URLS=http://+:4001
-            - ConnectionStrings:MyConnectionString=Server=postgres;Port=5432:32694;Database=postgres;User Id=postgres;Password=password;
+            - ConnectionStrings:MyConnectionString=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
             - ASPNETCORE_ENVIRONMENT=Development
         network_mode: host
 
