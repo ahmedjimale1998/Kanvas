@@ -10,7 +10,12 @@
       "ProjectGuid": "ea932a10-8479-4432-b5b7-ba181eb25764",
       "DisplayName": "UserService",
       "ColorIndex": 1
+    },
+    "d320f2cb-fbf0-4138-a762-b452b65aca7d": {
+      "ProjectGuid": "d320f2cb-fbf0-4138-a762-b452b65aca7d",
+      "DisplayName": "ApiGateway",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
