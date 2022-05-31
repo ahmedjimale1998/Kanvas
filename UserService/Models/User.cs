@@ -12,10 +12,10 @@ namespace UserService.Models
         public string? Name { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public string? Email { get; set; }   // ? LA
 
         [Required]
-        public string Password { get; set; }
+        public string? Password { get; set; } // ? LA
 
         public string? Role { get; set; }
 

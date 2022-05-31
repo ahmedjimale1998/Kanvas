@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using UserService.AsyncDataService;
 using UserService.Data;
 using UserService.Interfaces;
 using UserService.Repository;
+using UserService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,7 @@ builder.Services.AddControllers()
     .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddHttpClient<IMailDataClient, HttpUserDataClient>();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -28,6 +31,7 @@ builder.Services.AddDbContext<UserContext>(options =>
 });
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
 // Add EF services to the services container.
 

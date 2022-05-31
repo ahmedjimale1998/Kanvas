@@ -90,10 +90,7 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\UserService.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\ref\UserService.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\UserService.pdb
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Dapper.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Humanizer.dll
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Mapster.dll
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Mapster.Core.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -125,3 +122,7 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\obj\
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\obj\Debug\net6.0\UserService.pdb
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\obj\Debug\net6.0\UserService.genruntimeconfig.cache
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\Serilog.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\appsettings.Production.json
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserService\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

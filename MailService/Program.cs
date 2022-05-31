@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 IConfiguration configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile("appsettings.Development.json", true, true)
    .Build();
 
 // Add services to the container.
