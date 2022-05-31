@@ -4,6 +4,6 @@ namespace UserService.SyncDataServices.Http
 {
     public interface IMailDataClient
     {
-        Task SendUserToCommand(UserReadDto user);
+        Task SendUserToMail(UserReadDto user);
     }
 }

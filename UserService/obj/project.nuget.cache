@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8S0b4uxEyPniiJ28GgtioFcAaKAJ/Li4uvKWhiN/S2XaXcsyNZNOWQfpTwxt5zvnpVTWLS1ZrPB8olgLJXilbA==",
+  "dgSpecHash": "KWLOwIY1tTZqLVvGAzNfV/TogSDgnAFQypMJ4+h0aqX2qWeDwQMgTiSA0S14HxUKr91PiPioq9gG96GRXEHjxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\UserService\\UserService.csproj",
+  "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\userservice\\UserService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ah_me\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

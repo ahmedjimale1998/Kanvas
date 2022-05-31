@@ -14,14 +14,14 @@ namespace UserService.SyncDataServices.Http
             _httpClient = httpClient;
             _configuration = configuration;
         }
-        public async Task SendUserToCommand(UserReadDto user)
+        public async Task SendUserToMail(UserReadDto user)
         {
             var httpContent = new StringContent(
                 JsonSerializer.Serialize(user),
                 Encoding.UTF8,
                 "application/json");
 
-            var response = await _httpClient.PostAsync("http://localhost:6000/api/c/platforms/", httpContent);
+            var response = await _httpClient.PostAsync($"{_configuration["MailService"]}", httpContent);
 
             if (response.IsSuccessStatusCode)
             {

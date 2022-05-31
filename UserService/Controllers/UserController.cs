@@ -40,10 +40,10 @@ namespace UserService.Controllers
             var savedUser = await userRepo.Add(user);
             var userReadDto = _mapper.Map<UserReadDto>(savedUser);
 
-            // sync
+            // Send Sync Message
             try
             {
-                await _mailDataClient.SendUserToCommand(userReadDto);
+                await _mailDataClient.SendUserToMail(userReadDto);
             }
             catch (Exception ex)
             {
