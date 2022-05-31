@@ -86,6 +86,14 @@ namespace UserService.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("test")]
+        public async Task<IActionResult> test(Guid guid)
+        {
+            var testUSer = new User(Guid.NewGuid(), "test","testEmail", "testpassword", "TestTeacher", 1  );
+            return Ok(testUSer);
+        }
+
         /*  [HttpGet]
             [Route("getAllByClassId/{id}")]
             public async Task<IActionResult> GetAllUsersByClassId(int id)
