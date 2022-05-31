@@ -88,9 +88,9 @@ namespace UserService.Controllers
 
         [HttpGet]
         [Route("test")]
-        public async Task<IActionResult> test(Guid guid)
+        public IActionResult Test()
         {
-            var testUSer = new User(Guid.NewGuid(), "test","testEmail", "testpassword", "TestTeacher", 1  );
+            var testUSer = new User(Guid.NewGuid(), "test", "testEmail", "testpassword", "TestTeacher", 1);
             return Ok(testUSer);
         }
 

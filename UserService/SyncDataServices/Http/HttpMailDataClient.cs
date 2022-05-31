@@ -4,12 +4,12 @@ using UserService.DTOs;
 
 namespace UserService.SyncDataServices.Http
 {
-    public class HttpUserDataClient : IMailDataClient
+    public class HttpMailDataClient : IMailDataClient
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public HttpUserDataClient(HttpClient httpClient, IConfiguration configuration)
+        public HttpMailDataClient(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
             _configuration = configuration;
