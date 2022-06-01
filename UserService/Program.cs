@@ -8,11 +8,6 @@ using UserService.Repository;
 using UserService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
-
-IConfiguration configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", true, true)
-   .Build();
-
 // Add services to the container.
 
 builder.Services.AddControllers()
@@ -36,11 +31,33 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "UserService", Version = "v1" });
 });
 
-builder.Services.AddDbContext<UserContext>(options =>
+if (builder.Environment.IsProduction())
+{   
+    IConfiguration ProductionConfiguration = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.Production.json", true, true)
+        .Build();
+
+    Console.WriteLine("--> Using kubernetes Postgress Db");
+    builder.Services.AddDbContext<UserContext>(options =>
+    {
+        var connString = ProductionConfiguration.GetConnectionString("MyConnectionString");
+        options.UseNpgsql(connString);
+    });
+}
+else
 {
-    var connString = configuration.GetConnectionString("MyConnectionString");
-    options.UseNpgsql(connString);
-});
+    IConfiguration developmentConfiguration = new ConfigurationBuilder()
+       .AddJsonFile("appsettings.Development.json", true, true)
+      .Build();
+
+    Console.WriteLine("--> Using local docker Postgress Db");
+    builder.Services.AddDbContext<UserContext>(options =>
+    {
+        var connString = developmentConfiguration.GetConnectionString("MyConnectionString");
+        options.UseNpgsql(connString);
+    });
+}
+
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
@@ -57,8 +74,8 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "UserService");
     });
-    
 }
+
 app.UseRouting();
 app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();

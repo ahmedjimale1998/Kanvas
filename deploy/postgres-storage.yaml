@@ -21,10 +21,9 @@ metadata:
   labels:
     app: postgres
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
-      
-# storageClassName: manual
