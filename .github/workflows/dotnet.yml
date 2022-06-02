@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main, fix-mapstructure ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, fix-mapstructure ]
 
 jobs:
   build:
