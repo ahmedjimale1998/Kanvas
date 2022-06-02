@@ -3,6 +3,7 @@ name: Release UserService
 on:
   push:
     branches:
+      - main
       - fix-mapstructure
     paths:
       - "UserService/**"
