@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "HeeWAj6jK0MJe9QI5McMumU6hWzf4IFvyxARw7CTW6g=",
+  "Source": "ApiGateway",
+  "BasePath": "_content/ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ApiGateway\\wwwroot",
+      "Source": "ApiGateway",
+      "ContentRoot": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\ApiGateway\\wwwroot\\",
+      "BasePath": "_content/ApiGateway",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
