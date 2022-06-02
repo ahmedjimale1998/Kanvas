@@ -32,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: kanvas-mailservice
+  name: kanvas-mailservice-srv
 spec:
   type: ClusterIP
   ports:

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "epCAHpfgAvQIxtdDyur6NR9wH7hVKpEIJnYucnv7+FI1agVemTrmDpPjSwzKphPzuYx1hs0XeutrxCw/KM7NTQ==",
+  "dgSpecHash": "gq6Zt86L9LXzGaCcp2MoCgQcM7FWz6Mg8J5RyPQDzmhLBGyhg9kqHJJHvCtFW9B3zlZiFBkdqpPoiHMWvc8Gjw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\EmailService.Test\\MailService.Test.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ah_me\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\ah_me\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",

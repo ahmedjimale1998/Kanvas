@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5RlW98LrBuFeM4WCjIySDX1QKyIxy/tk5PppNJlamzX69n4Ic/YOY18cmNQeo22Pz87jfmIYSwEy85blvCw48w==",
+  "dgSpecHash": "PS344p4Wab9aeqKk63vLkQMWv42dWu1aIhiaJlWmIIC2Sm/EQM3oJ6Dm0dDgU6g98XNCQG2ZFTWHPiO/w5Wepw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\MailService\\MailService.csproj",
+  "projectFilePath": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\mailservice\\MailService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ah_me\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\ah_me\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ah_me\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",

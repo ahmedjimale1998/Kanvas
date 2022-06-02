@@ -8,6 +8,7 @@
         public string? Password { get; set; }
         public string? Role { get; set; }
         public int ClassId { get; set; }
+        public string Event { get; set; }   
 
     }
 }

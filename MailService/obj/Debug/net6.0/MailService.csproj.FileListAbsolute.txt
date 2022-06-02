@@ -84,3 +84,5 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\MailService\obj\
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\MailService\obj\Debug\net6.0\MailService.genruntimeconfig.cache
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\MailService\bin\Debug\net6.0\appsettings.Production.json
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\MailService\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\MAILSERVICE\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\MAILSERVICE\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

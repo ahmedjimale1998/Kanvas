@@ -83,7 +83,7 @@ services:
             - ASPNETCORE_URLS=http://+:4003
             - ASPNETCORE_ENVIRONMENT=Development
         network_mode: host
-
+    
 
 volumes:
     user_db:

@@ -8,5 +8,6 @@ namespace MailService.Interfaces
         Task<Mail> Get(Guid id);
         Task<List<Mail>> GetAll();
         Task Delete(Guid id);
+        Task NewUserCreated(User user);
     }
 }

@@ -21,6 +21,9 @@ namespace UserService.Models
 
         public int? ClassId { get; set; }
 
+
+
+
         public User(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<User> entityTypeBuilder)
         {
 

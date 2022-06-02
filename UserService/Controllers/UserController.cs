@@ -50,6 +50,17 @@ namespace UserService.Controllers
                 Console.WriteLine($"--> Could not send : {ex.Message}");
             }
 
+            // Send Async Message
+            try
+            {
+                var userPublishedDto = _mapper.Map<UserPublishedDto>(userReadDto);
+                userPublishedDto.Event = "User_Published";
+                _messageBusClient.PublishNewUser(userPublishedDto);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"--> Could not send asynchronously: {ex.Message}");
+            }
 
             return Ok(userReadDto);
         }

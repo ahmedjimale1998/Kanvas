@@ -140,9 +140,6 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\UserService.Test.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\ref\UserService.Test.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\UserService.Test.pdb
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\Dapper.dll
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\Mapster.dll
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\Mapster.Core.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
@@ -249,3 +246,5 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\obj\Debug\net6.0\ref\UserService.Test.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\obj\Debug\net6.0\UserService.Test.pdb
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\obj\Debug\net6.0\UserService.Test.genruntimeconfig.cache
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\UserServiceTest\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
