@@ -45,10 +45,10 @@ spec:
     protocol: TCP
     port: 80
     targetPort: 80
-  - name: kanvas-userservice-grpc
-    protocol: TCP
-    port: 666
-    targetPort: 666
+  # - name: kanvas-userservice-grpc
+  #   protocol: TCP
+  #   port: 666
+  #   targetPort: 666
 
     
 # apiVersion: v1
