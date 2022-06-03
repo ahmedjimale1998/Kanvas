@@ -3,7 +3,7 @@ name: Release MailService
 on:
   push:
     branches:
-    - fix-mapstructure
+      - fix-mapstructure
     paths:
       - "MailService/**"
       - ".github/workflows/release-mailservice.yaml"
