@@ -59,6 +59,8 @@ else
 }
 
 
+
+
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
@@ -74,6 +76,16 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "UserService");
     });
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+
+
+    var context = services.GetRequiredService<UserContext>();
+    context.Database.Migrate();
 }
 
 app.UseRouting();

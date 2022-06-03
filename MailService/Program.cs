@@ -66,12 +66,6 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "MailService", Version = "v1" });
 });
 
-builder.Services.AddDbContext<MailContext>(options =>
-{
-    var connString = configuration.GetConnectionString("MyConnectionString");
-    options.UseNpgsql(connString);
-});
-
 builder.Services.AddTransient<IMailRepository, MailRepository>();
 
 // Add EF services to the services container.
@@ -87,6 +81,15 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "MailService");
     });
 
+}
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+
+
+    var context = services.GetRequiredService<MailContext>();
+    context.Database.Migrate();
 }
 app.UseRouting();
 app.UseCors("CorsPolicy");
