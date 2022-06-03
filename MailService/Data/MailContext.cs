@@ -21,5 +21,3 @@ namespace MailService.Data
     }
 }
 
-
-
