@@ -3,7 +3,6 @@ name: Release MailService
 on:
   push:
     branches:
-    - main
     - fix-mapstructure
     paths:
       - "MailService/**"
