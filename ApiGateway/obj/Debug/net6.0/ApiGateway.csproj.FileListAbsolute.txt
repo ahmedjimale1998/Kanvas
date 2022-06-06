@@ -32,7 +32,6 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\Ap
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\Kanvas\Kanvas\ApiGateway\obj\Debug\net6.0\ApiGateway.csproj.AssemblyReference.cache
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\bin\Debug\net6.0\appsettings.json
-C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\bin\Debug\net6.0\OcelotConfig\ocelot.json
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\bin\Debug\net6.0\ApiGateway.staticwebassets.runtime.json
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\bin\Debug\net6.0\ApiGateway.exe
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\bin\Debug\net6.0\ApiGateway.deps.json
@@ -63,3 +62,9 @@ C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\obj\D
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\obj\Debug\net6.0\ref\ApiGateway.dll
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\obj\Debug\net6.0\ApiGateway.pdb
 C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\ApiGateway\obj\Debug\net6.0\ApiGateway.genruntimeconfig.cache
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\apigateway\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\apigateway\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\apigateway\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\apigateway\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\apigateway\bin\Debug\net6.0\ocelot.dev.json
+C:\Users\ah_me\OneDrive\E-mailbijlagen\Documenten\GitHub\Kanvas\apigateway\bin\Debug\net6.0\ocelot.pro.json

@@ -1,0 +1,51 @@
+{
+  "Routes": [
+    //USER API
+    {
+      "DownstreamPathTemplate": "/User/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": "4001"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/User/{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/User",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": "4001"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/User"
+    },
+
+    //Mail API
+    {
+      "DownstreamPathTemplate": "/Mail/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": "4002"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Mail/{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/Mail",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": "4002"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Mail"
+    }
+  ]
+}

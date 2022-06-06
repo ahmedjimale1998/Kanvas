@@ -53,6 +53,7 @@ namespace MailService.Controller
 
 
         [HttpDelete]
+        [Route("{id}")]
         public async Task<IActionResult> Delete(Guid guid)
         {
             await Repository.Delete(guid);
