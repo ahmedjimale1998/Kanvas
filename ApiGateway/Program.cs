@@ -19,6 +19,7 @@ public class Program
             {
                 webBuilder.UseStartup<Startup>();
 
+
             })
             .ConfigureLogging(logging => logging.AddConsole());
     }
