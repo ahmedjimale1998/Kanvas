@@ -5,7 +5,7 @@ on:
     branches:
       - fix-mapstructure
     paths:
-      - "OcelotAPIGateway/**"
+      - "ApiGateway/**"
       - ".github/workflows/release-ocelot.yml"
       - "Shared/**"
 env:
