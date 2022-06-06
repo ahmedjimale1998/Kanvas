@@ -49,10 +49,6 @@
               "target": "Package",
               "version": "[18.0.0, )"
             },
-            "Ocelot.Provider.Kubernetes": {
-              "target": "Package",
-              "version": "[18.0.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.1, )"
