@@ -2,50 +2,56 @@
   "Routes": [
     //USER API
     {
-      "DownstreamPathTemplate": "/User/{everything}",
+      "DownstreamPathTemplate": "/api/user{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": "4001"
+          "Host": "kanvas-userservice",
+          "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/api/User/{everything}"
+      "UpstreamPathTemplate": "/api/user{everything}"
     },
     {
-      "DownstreamPathTemplate": "/User",
+      "DownstreamPathTemplate": "/user/",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": "4001"
+          "Host": "kanvas-userservice",
+          "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/api/User"
+      "UpstreamPathTemplate": "/api/user/"
     },
 
     //Mail API
     {
-      "DownstreamPathTemplate": "/Mail/{everything}",
+      "DownstreamPathTemplate": "/api/mail{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": "4002"
+          "Host": "kanvas-mailservice-srv",
+          "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/api/Mail/{everything}"
+      "UpstreamPathTemplate": "/api/mail{everything}"
     },
     {
-      "DownstreamPathTemplate": "/Mail",
+      "DownstreamPathTemplate": "/api/mail/",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "host.docker.internal",
-          "Port": "4002"
+          "Host": "kanvas-mailservice-srv",
+          "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/api/Mail"
+      "UpstreamPathTemplate": "/api/mail/"
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Namespace": "propnull",
+      "Type": "KubernetesServiceDiscoveryProvider"
+    }
+  }
 }

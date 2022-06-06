@@ -48,10 +48,9 @@
       "UpstreamPathTemplate": "/api/mail/"
     }
   ],
-    "GlobalConfiguration": 
-    {
-      "BaseUrl": "http://localhost:56005"
-    }
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:56005"
+  }
 }
 
 /*  "GlobalConfiguration": {
