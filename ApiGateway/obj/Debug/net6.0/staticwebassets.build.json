@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rh24M42RagjG82mCh/dkIb8pa4x/YDvou+oFNfK/DQg=",
+  "Hash": "HeeWAj6jK0MJe9QI5McMumU6hWzf4IFvyxARw7CTW6g=",
   "Source": "ApiGateway",
   "BasePath": "_content/ApiGateway",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "ApiGateway\\wwwroot",
       "Source": "ApiGateway",
-      "ContentRoot": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\apigateway\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ah_me\\OneDrive\\E-mailbijlagen\\Documenten\\GitHub\\Kanvas\\ApiGateway\\wwwroot\\",
       "BasePath": "_content/ApiGateway",
       "Pattern": "**"
     }
