@@ -15,7 +15,17 @@
       "ProjectGuid": "d320f2cb-fbf0-4138-a762-b452b65aca7d",
       "DisplayName": "ApiGateway",
       "ColorIndex": 2
+    },
+    "46584ef5-c5ba-477e-bfec-7dae1af8e91c": {
+      "ProjectGuid": "46584ef5-c5ba-477e-bfec-7dae1af8e91c",
+      "DisplayName": "UserService.Test",
+      "ColorIndex": 3
+    },
+    "c88f7117-153f-4edf-b511-5f39908b3c91": {
+      "ProjectGuid": "c88f7117-153f-4edf-b511-5f39908b3c91",
+      "DisplayName": "MailService.Test",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }
