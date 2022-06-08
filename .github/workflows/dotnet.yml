@@ -1,49 +1,64 @@
-name: .NET
+name: Build UserService
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+      branches:
+      - main
+      - fix-mapstructure
 env:
   PROJECT_PATH: 'UserService/UserService.csproj'
-  TEST_PATH: 'UserService.Test/UserService.Test.csproj'
-  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  TEST_PATH: 'UserServiceTest/UserService.Test.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   
 jobs:
-  build:
-
+ build:
     runs-on: ubuntu-latest
-    env: 
-      working-directory: ./Kanvas/Kanvas/
-
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: | 
-        dotnet restore
-      working-directory: ${{env.working-directory}}
-    - name: Build
-      run: |
-        dotnet build --no-restore
-      working-directory: ${{env.working-directory}}
-    - name: Test
-      run: | 
-        dotnet test --no-build --verbosity normal
+        dotnet-version: '6.0.x'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+      
+    - name: 'Run tests'
+      run: dotnet test ${{ env.TEST_PATH }}
+
         
-      working-directory: ${{env.working-directory}}
     # https://github.com/highbyte/sonarscan-dotnet
     - name: SonarScanner for .NET 6
       uses: highbyte/sonarscan-dotnet@v2.1.2
       with:
-        sonarProjectKey: Kanvas
-        sonarProjectName: Kanvas
-        sonarOrganization: dmitri-lisokonov
+        sonarProjectKey: ahmedjimale1998_user_service
+        sonarProjectName: user_service
+        sonarOrganization: ahmedjimale1998
         dotnetBuildArguments: ./UserService
-        dotnetTestArguments: ./UserService.Test
+        dotnetTestArguments: ./UserServiceTest
+        
+#   build:
+
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Setup .NET
+#       uses: actions/setup-dotnet@v2
+#       with:
+#         dotnet-version: 6.0.x
+#     - name: Restore dependencies
+#       run: | 
+#         dotnet restore
+#     - name: Build
+#       run: |
+#         dotnet build --no-restore
+#     - name: Test
+#       run: | 
+#         dotnet test --no-build --verbosity normal
