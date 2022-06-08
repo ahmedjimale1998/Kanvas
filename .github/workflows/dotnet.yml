@@ -1,14 +1,14 @@
-name: .NET
+name: Build UserService
 
 on:
   push:
-    branches: [ main ]
+    branches: [ fix-mapstructure ]
   pull_request:
-    branches: [ main ]
+    branches: [ fix-mapstructure ]
 env:
   PROJECT_PATH: 'UserService/UserService.csproj'
   TEST_PATH: 'UserService.Test/UserService.Test.csproj'
-  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 jobs:
@@ -38,12 +38,13 @@ jobs:
         dotnet test --no-build --verbosity normal
         
       working-directory: ${{env.working-directory}}
+      
     # https://github.com/highbyte/sonarscan-dotnet
     - name: SonarScanner for .NET 6
       uses: highbyte/sonarscan-dotnet@v2.1.2
       with:
-        sonarProjectKey: Kanvas
-        sonarProjectName: Kanvas
-        sonarOrganization: dmitri-lisokonov
+        sonarProjectKey: ahmedjimale1998_user_service
+        sonarProjectName: user_service
+        sonarOrganization: ahmedjimale1998
         dotnetBuildArguments: ./UserService
         dotnetTestArguments: ./UserService.Test
