@@ -10,13 +10,14 @@ env:
   TEST_PATH: 'UserService.Test/UserService.Test.csproj'
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  working-directory: ./Kanvas/
   
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    env: 
-      working-directory: ./Kanvas/Kanvas/
+#     env: 
+#       working-directory: ./Kanvas/Kanvas/
 
 
     steps:
