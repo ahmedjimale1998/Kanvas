@@ -10,7 +10,7 @@ env:
   TEST_PATH: 'UserService.Test/UserService.Test.csproj'
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  working-directory: ./Kanvas/
+
   
 jobs:
   build:
@@ -29,17 +29,13 @@ jobs:
     - name: Restore dependencies
       run: | 
         dotnet restore
-      working-directory: ${{env.working-directory}}
     - name: Build
       run: |
         dotnet build --no-restore
-      working-directory: ${{env.working-directory}}
     - name: Test
       run: | 
         dotnet test --no-build --verbosity normal
         
-      working-directory: ${{env.working-directory}}
-      
     # https://github.com/highbyte/sonarscan-dotnet
     - name: SonarScanner for .NET 6
       uses: highbyte/sonarscan-dotnet@v2.1.2
