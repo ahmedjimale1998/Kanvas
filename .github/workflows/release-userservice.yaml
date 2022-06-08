@@ -9,6 +9,9 @@ on:
       - ".github/workflows/release-userservice.yaml"
 env:
   PROJECT_PATH: 'UserService/UserService.csproj'
+  TEST_PATH: 'UserService.Test/UserService.Test.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -44,3 +47,14 @@ jobs:
         context: ./
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/kanvas-userservice:latest
+        
+        # https://github.com/highbyte/sonarscan-dotnet
+    - name: SonarScanner for .NET 6
+      uses: highbyte/sonarscan-dotnet@v2.1.2
+      with:
+        sonarProjectKey: ahmedjimale_user_service
+        sonarProjectName: user_service
+        sonarOrganization: ahmedjimale1998
+        dotnetBuildArguments: ./UserService
+        dotnetTestArguments: ./UserService.Test
+
