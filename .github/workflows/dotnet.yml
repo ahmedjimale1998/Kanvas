@@ -44,4 +44,4 @@ jobs:
         sonarProjectName: user_service
         sonarOrganization: ahmedjimale1998
         dotnetBuildArguments: ./UserService
-        dotnetTestArguments: ./UserService.Test
+        dotnetTestArguments: ${{ env.TEST_PATH }}
