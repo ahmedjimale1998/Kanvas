@@ -13,28 +13,26 @@ env:
 
   
 jobs:
-  build:
-
+ build:
     runs-on: ubuntu-latest
-#     env: 
-#       working-directory: ./Kanvas/Kanvas/
-
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: | 
-        dotnet restore
-    - name: Build
-      run: |
-        dotnet build --no-restore
-    - name: Test
-      run: | 
-        dotnet test --no-build --verbosity normal
+        dotnet-version: '6.0.x'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+      
+    - name: 'Run tests'
+      run: dotnet test ${{ env.TEST_PATH }}
+
         
     # https://github.com/highbyte/sonarscan-dotnet
     - name: SonarScanner for .NET 6
@@ -44,4 +42,23 @@ jobs:
         sonarProjectName: user_service
         sonarOrganization: ahmedjimale1998
         dotnetBuildArguments: ./UserService
-        dotnetTestArguments: UserService.Test
+        dotnetTestArguments: ./UserService.Test
+        
+#   build:
+
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Setup .NET
+#       uses: actions/setup-dotnet@v2
+#       with:
+#         dotnet-version: 6.0.x
+#     - name: Restore dependencies
+#       run: | 
+#         dotnet restore
+#     - name: Build
+#       run: |
+#         dotnet build --no-restore
+#     - name: Test
+#       run: | 
+#         dotnet test --no-build --verbosity normal
