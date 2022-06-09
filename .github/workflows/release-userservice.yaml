@@ -49,13 +49,5 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/kanvas-userservice:latest
         
-        # https://github.com/highbyte/sonarscan-dotnet
-    - name: SonarScanner for .NET 6
-      uses: highbyte/sonarscan-dotnet@v2.1.2
-      with:
-        sonarProjectKey: ahmedjimale_user_service
-        sonarProjectName: user_service
-        sonarOrganization: ahmedjimale1998
-        dotnetBuildArguments: ./UserService
-        dotnetTestArguments: ./UserServiceTest
+
 
