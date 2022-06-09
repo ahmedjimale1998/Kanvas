@@ -90,7 +90,6 @@ using (var scope = app.Services.CreateScope())
 
 app.UseRouting();
 app.UseCors("CorsPolicy");
-app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

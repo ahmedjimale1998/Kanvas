@@ -48,7 +48,6 @@ else
     builder.Configuration.AddJsonFile($"ocelot.pro.json");
 }
 app.UseCors("AllowAll");
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseOcelot().Wait();
 app.UseRouting();

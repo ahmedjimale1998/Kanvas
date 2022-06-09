@@ -65,7 +65,7 @@ namespace MailService.EventProcessor
             switch(eventType.Event)
             {
                 case "User_Published":
-                    Console.WriteLine("--> Platform Published Event Detected");
+                    Console.WriteLine("--> User Published Event Detected");
                     return EventType.UserPublished;
                 default:
                     Console.WriteLine("--> Could not determine the event type");
