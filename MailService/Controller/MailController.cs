@@ -1,4 +1,5 @@
-﻿    using MailService.DTOs;
+﻿using AutoMapper;
+using MailService.DTOs;
 using MailService.Interfaces;
 using MailService.Models;
 using Mapster;
@@ -13,20 +14,23 @@ namespace MailService.Controller
     public class MailController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly IMailRepository Repository;
+        private readonly IMapper _mapper;
 
-        public MailController(IMailRepository repository)
+        public MailController(
+            IMailRepository repository,
+            IMapper mapper)
         {
             this.Repository = repository;
+            this._mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] MailDTO mailDTO)
+        public async Task<IActionResult> Add([FromBody] MailCreatDto mailDTO)
         {
-            var directory = Directory.GetCurrentDirectory();
-            var mail = mailDTO.Adapt<Mail>();
+            var mail = _mapper.Map<Mail>(mailDTO);
             mail.Id = Guid.NewGuid();
             var savedMail = await Repository.Add(mail);
-            return Ok(savedMail);
+            return Ok(_mapper.Map<MailReadDto>(mailDTO));
         }
 
 
@@ -35,7 +39,8 @@ namespace MailService.Controller
         public async Task<IActionResult> Get(Guid id)
         {
             var mail = await Repository.Get(id);
-            return Ok(mail);
+
+            return Ok(_mapper.Map<MailReadDto>(mail));
         }
 
         [HttpGet]
@@ -43,11 +48,12 @@ namespace MailService.Controller
         public async Task<IActionResult> GetAllUsers()
         {
             var mails = await Repository.GetAll();
-            return Ok(mails);
+            return Ok(_mapper.Map<List<MailReadDto>>(mails));
         }
 
 
         [HttpDelete]
+        [Route("{id}")]
         public async Task<IActionResult> Delete(Guid guid)
         {
             await Repository.Delete(guid);

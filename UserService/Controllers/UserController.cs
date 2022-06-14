@@ -1,8 +1,10 @@
-﻿using Mapster;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using UserService.AsyncDataService;
 using UserService.DTOs;
 using UserService.Interfaces;
 using UserService.Models;
+using UserService.SyncDataServices.Http;
 
 namespace UserService.Controllers
 {
@@ -12,20 +14,55 @@ namespace UserService.Controllers
     {
         private readonly IUserRepository userRepo;
         private readonly ILogger<UserController> logger;
+        private readonly IMapper _mapper;
+        private readonly IMailDataClient _mailDataClient;
+        private readonly IMessageBusClient _messageBusClient;
 
-        public UserController(IUserRepository userRepo, ILogger<UserController> logger)
+        public UserController(
+            IUserRepository userRepo,
+            ILogger<UserController> logger,
+            IMapper mapper,
+            IMessageBusClient messageClient,
+            IMailDataClient mailDataClient)
         {
             this.userRepo = userRepo;
             this.logger = logger;
+            this._mapper = mapper;
+            this._mailDataClient = mailDataClient;
+            this._messageBusClient = messageClient;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] AddUserDTO userDTO)
+        public async Task<ActionResult<UserReadDto>> Add([FromBody] UserCreatDto userDTO)
         {
-            var user = userDTO.Adapt<User>();
+            var user = _mapper.Map<User>(userDTO);
             user.Id = Guid.NewGuid();
             var savedUser = await userRepo.Add(user);
-            return Ok(savedUser);
+            var userReadDto = _mapper.Map<UserReadDto>(savedUser);
+
+            // Send Sync Message
+            try
+            {
+                await _mailDataClient.SendUserToMail(userReadDto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"--> Could not send : {ex.Message}");
+            }
+
+            // Send Async Message
+            try
+            {
+                var userPublishedDto = _mapper.Map<UserPublishedDto>(userReadDto);
+                userPublishedDto.Event = "User_Published";
+                _messageBusClient.PublishNewUser(userPublishedDto);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"--> Could not send asynchronously: {ex.Message}");
+            }
+
+            return Ok(userReadDto);
         }
 
         [HttpGet]
@@ -33,21 +70,21 @@ namespace UserService.Controllers
         public async Task<IActionResult> Get(Guid id)
         {
             var user = await userRepo.Get(id);
-            return Ok(user);
+            return Ok(_mapper.Map<UserReadDto>(user));
         }
 
         [HttpGet]
         [Route("getall")]
         public async Task<IActionResult> GetAllUsers()
         {
-            this.logger.LogInformation("Get All Users");
             var users = await userRepo.GetAllUsers();
-            return Ok(users);
+            return Ok(_mapper.Map<List<UserReadDto>>(users));
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] User user)
+        public async Task<IActionResult> Update([FromBody] UserReadDto userDto)
         {
+            var user = _mapper.Map<User>(userDto);
             await userRepo.Update(user);
             return Ok();
         }
@@ -58,6 +95,14 @@ namespace UserService.Controllers
         {
             await userRepo.Delete(guid);
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("test")]
+        public IActionResult Test()
+        {
+            var testUSer = new User(Guid.NewGuid(), "test", "testEmail", "testpassword", "TestTeacher", 1);
+            return Ok(testUSer);
         }
 
         /*  [HttpGet]

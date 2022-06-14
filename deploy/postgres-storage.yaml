@@ -20,7 +20,7 @@ metadata:
   name: postgres-pv-claim
   labels:
     app: postgres
-spec:
+spec: 
   storageClassName: manual
   accessModes:
     - ReadWriteMany

@@ -1,0 +1,86 @@
+{
+  "Routes": [
+    //USER API
+    {
+      "DownstreamPathTemplate": "/api/user{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5061"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/user/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5061"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user/"
+    },
+
+    //Mail API
+    {
+      "DownstreamPathTemplate": "/api/mail{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5073"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/mail{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/mail/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5073"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/mail/"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:56005"
+  }
+}
+
+/*  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:7149"
+  },*/
+/*host.docker.internal*/
+/* {
+      "DownstreamPathTemplate": "/api/User/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": "4001"
+        }
+      ],
+      "UpstreamPathTemplate": "/User/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    
+     {
+      "DownstreamPathTemplate": "/api/Mail/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": "4002"
+        }
+      ],
+      "UpstreamPathTemplate": "/Mail/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    }
+  */
+

@@ -1,4 +1,4 @@
-﻿using Ocelot.DependencyInjection;
+﻿/*using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 namespace ApiGateway
@@ -31,3 +31,4 @@ namespace ApiGateway
         }
     }
 }
+*/

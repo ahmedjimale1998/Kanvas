@@ -69,21 +69,21 @@ services:
     gateway:
         container_name: gateway
         build: 
-           dockerfile: ./ApiGateway.Dockerfile
-           context: ./Gateway/ApiGateway
+           dockerfile: ./Gateway.Dockerfile
+        #    context: ./Gateway/ApiGateway
         ports: 
             - "4003:4003"
-        links:
-            - userservice
-            - mailservice
-        depends_on:
-            - "userservice"
-            - "mailservice"
+        # links:
+        #     - userservice
+        #     - mailservice
+        # depends_on:
+        #     - "userservice"
+        #     - "mailservice"
         environment:
             - ASPNETCORE_URLS=http://+:4003
             - ASPNETCORE_ENVIRONMENT=Development
         network_mode: host
-
+    
 
 volumes:
     user_db:
