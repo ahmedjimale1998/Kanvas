@@ -59,6 +59,8 @@ else
 }
 
 
+
+
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
@@ -76,9 +78,18 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+
+
+    var context = services.GetRequiredService<UserContext>();
+    context.Database.Migrate();
+}
+
 app.UseRouting();
 app.UseCors("CorsPolicy");
-app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

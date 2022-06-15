@@ -40,8 +40,6 @@ namespace MailService.AsyncDataService
 
         }
 
-        
-
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             stoppingToken.ThrowIfCancellationRequested();

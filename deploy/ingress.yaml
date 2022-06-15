@@ -11,7 +11,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: kanvas-userservice
+            name: ocelot-gateway
             port:
               number: 80
 # Add prefix path for ocelot

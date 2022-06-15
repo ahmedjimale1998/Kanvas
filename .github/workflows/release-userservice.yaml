@@ -9,6 +9,10 @@ on:
       - ".github/workflows/release-userservice.yaml"
 env:
   PROJECT_PATH: 'UserService/UserService.csproj'
+  TEST_PATH: 'UserServiceTest/UserService.Test.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 jobs:
   build:
@@ -44,3 +48,6 @@ jobs:
         context: ./
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/kanvas-userservice:latest
+        
+
+

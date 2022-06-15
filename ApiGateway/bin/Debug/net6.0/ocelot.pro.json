@@ -1,0 +1,68 @@
+{
+  "Routes": [
+    //USER API
+    {
+      "DownstreamPathTemplate": "/api/user{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kanvas-userservice-srv",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/user/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kanvas-userservice-srv",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user/"
+    },
+
+    //Mail API
+    {
+      "DownstreamPathTemplate": "/api/mail{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kanvas-mailservice-srv",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/mail{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/mail/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kanvas-mailservice-srv",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/mail/"
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Namespace": "propnull",
+      "Type": "KubernetesServiceDiscoveryProvider"
+    }
+  }
+}
+/*
+  "GlobalConfiguration": {
+  "ServiceDiscoveryProvider": {
+    "Host": "192.168.0.13",
+    "Port": 443,
+    "Token": "txpc696iUhbVoudg164r93CxDTrKRVWG",
+    "Namespace": "dev",
+    "Type": "kube"
+  }
+}
+*/

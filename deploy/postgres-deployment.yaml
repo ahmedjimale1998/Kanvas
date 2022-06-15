@@ -27,4 +27,40 @@ spec:
       volumes:
         - name: postgredb
           persistentVolumeClaim:
-            claimName: postgres-pv-claim            
+            claimName: postgres-pv-claim  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maildb
+spec:
+  ports:
+  - port: 5432
+  selector:
+    app: maildb
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maildb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maildb
+  template:
+    metadata:
+      labels:
+        app: maildb
+    spec:
+      containers:
+      - name: maildb
+        image: postgres:14.1-alpine
+        env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: mailservice
+        ports:
+        - containerPort: 5432
+          name: maildb

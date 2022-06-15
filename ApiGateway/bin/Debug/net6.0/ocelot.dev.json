@@ -2,30 +2,55 @@
   "Routes": [
     //USER API
     {
-      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DownstreamPathTemplate": "/api/user{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "4001"
+          "Port": "5061"
         }
       ],
-      "UpstreamPathTemplate": "/User/{everything}"
+      "UpstreamPathTemplate": "/api/user{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/user/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5061"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user/"
     },
 
     //Mail API
     {
-      "DownstreamPathTemplate": "/api/Mail/{everything}",
+      "DownstreamPathTemplate": "/api/mail{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "4002"
+          "Port": "5073"
         }
       ],
-      "UpstreamPathTemplate": "/Mail/{everything}"
+      "UpstreamPathTemplate": "/api/mail{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/mail/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5073"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/mail/"
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:56005"
+  }
 }
 
 /*  "GlobalConfiguration": {
