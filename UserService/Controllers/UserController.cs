@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserService.AsyncDataService;
 using UserService.DTOs;
@@ -39,17 +40,7 @@ namespace UserService.Controllers
             user.Id = Guid.NewGuid();
             var savedUser = await userRepo.Add(user);
             var userReadDto = _mapper.Map<UserReadDto>(savedUser);
-
-            // Send Sync Message
-            try
-            {
-                await _mailDataClient.SendUserToMail(userReadDto);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"--> Could not send : {ex.Message}");
-            }
-
+           
             // Send Async Message
             try
             {
@@ -72,7 +63,7 @@ namespace UserService.Controllers
             var user = await userRepo.Get(id);
             return Ok(_mapper.Map<UserReadDto>(user));
         }
-
+        [Authorize(Policy = "PublicSecure")]
         [HttpGet]
         [Route("getall")]
         public async Task<IActionResult> GetAllUsers()
@@ -113,7 +104,16 @@ namespace UserService.Controllers
 
                 return Ok(users);
             }*/
-
+/* // Send Sync Message
+            try
+            {
+                await _mailDataClient.SendUserToMail(userReadDto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"--> Could not send : {ex.Message}");
+            }
+*/
 
 
     }

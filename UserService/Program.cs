@@ -1,5 +1,7 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Logging;
 using UserService.AsyncDataService;
 using UserService.Data;
 using UserService.Interfaces;
@@ -15,6 +17,22 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddHttpClient<IMailDataClient, HttpMailDataClient>();
+IdentityModelEventSource.ShowPII = true;
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.Authority = "https://localhost:7225";
+    o.Audience = "myresourceapi";
+    o.RequireHttpsMetadata = false;
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("PublicSecure", policy => policy.RequireClaim("client_id", "secret_client_id"));
+});
 
 // Auto Mapper Configurations
 var mappingConfig = new MapperConfiguration(mc =>
@@ -90,6 +108,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseRouting();
 app.UseCors("CorsPolicy");
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
