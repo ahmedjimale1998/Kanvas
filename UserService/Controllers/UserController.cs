@@ -33,6 +33,7 @@ namespace UserService.Controllers
             this._messageBusClient = messageClient;
         }
 
+        [Authorize(Policy = "PublicSecure")]
         [HttpPost]
         public async Task<ActionResult<UserReadDto>> Add([FromBody] UserCreatDto userDTO)
         {
@@ -56,6 +57,7 @@ namespace UserService.Controllers
             return Ok(userReadDto);
         }
 
+        [Authorize(Policy = "PublicSecure")]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> Get(Guid id)
@@ -63,6 +65,7 @@ namespace UserService.Controllers
             var user = await userRepo.Get(id);
             return Ok(_mapper.Map<UserReadDto>(user));
         }
+
         [Authorize(Policy = "PublicSecure")]
         [HttpGet]
         [Route("getall")]
@@ -72,6 +75,7 @@ namespace UserService.Controllers
             return Ok(_mapper.Map<List<UserReadDto>>(users));
         }
 
+        [Authorize(Policy = "PublicSecure")]
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UserReadDto userDto)
         {
@@ -80,6 +84,7 @@ namespace UserService.Controllers
             return Ok();
         }
 
+        [Authorize(Policy = "PublicSecure")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> Delete(Guid guid)
@@ -88,6 +93,7 @@ namespace UserService.Controllers
             return Ok();
         }
 
+        [Authorize(Policy = "PublicSecure")]
         [HttpGet]
         [Route("test")]
         public IActionResult Test()
