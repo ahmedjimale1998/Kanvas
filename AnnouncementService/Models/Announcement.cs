@@ -16,13 +16,13 @@ namespace AnnouncementService.Models
         public string Message { get; set; }
         public DateTime Date { get; set; }
 
-        public Announcement(Guid _Id,int _ClassId, string _Title, string _Message, DateTime _Date )
+        public Announcement(Guid Id,int ClassId, string Title, string Message, DateTime Date )
         {
-            Id = _Id;
-            Title = _Title;
-            Message = _Message;   
-            Date = _Date;   
-            ClassId = _ClassId; 
+            this.Id = Id;
+            this.Title = Title;
+            this.Message = Message;
+            this.Date = Date;
+            this.ClassId = ClassId; 
         }
 
         public Announcement()
