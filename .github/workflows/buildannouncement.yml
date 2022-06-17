@@ -3,7 +3,6 @@ name: Build AnnouncementService
 on:
   push:
       branches:
-      - main
       - fix-mapstructure
 env:
   PROJECT_PATH: 'AnnouncementService/AnnouncementService.csproj'
