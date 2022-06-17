@@ -117,6 +117,7 @@ else
             {
                 webBuilder.UseStartup<Startup>();
 
+
             })
             .ConfigureLogging(logging => logging.AddConsole());
     }

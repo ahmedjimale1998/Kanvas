@@ -25,7 +25,17 @@
       "ProjectGuid": "c88f7117-153f-4edf-b511-5f39908b3c91",
       "DisplayName": "MailService.Test",
       "ColorIndex": 4
+    },
+    "c020365a-1b00-4c21-ae5e-3581d42f3f9c": {
+      "ProjectGuid": "c020365a-1b00-4c21-ae5e-3581d42f3f9c",
+      "DisplayName": "IdentityServer",
+      "ColorIndex": 5
+    },
+    "e8667468-312d-491b-93c3-822fc713f953": {
+      "ProjectGuid": "e8667468-312d-491b-93c3-822fc713f953",
+      "DisplayName": "AnnouncementService",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 7
 }

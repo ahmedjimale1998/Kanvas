@@ -1,0 +1,49 @@
+name: Build UserService 
+
+on:
+  push:
+    branches: [  fix-mapstructure ]
+  pull_request:
+    branches: [  fix-mapstructure ]
+env:
+  PROJECT_PATH: 'UserService/UserService.csproj'
+  TEST_PATH: 'UserService.Test/Userservice.Test.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+#     env: 
+#       working-directory: ./Kanvas/UserService
+
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: | 
+        dotnet restore
+#       working-directory: ${{env.working-directory}}
+    - name: Build
+      run: |
+        dotnet build --no-restore
+#       working-directory: ${{env.working-directory}}
+    - name: Test
+      run: | 
+        dotnet test --no-build --verbosity normal
+#       working-directory: ${{env.working-directory}}
+
+ # https://github.com/highbyte/sonarscan-dotnet
+    - name: SonarScanner for .NET 6
+      uses: highbyte/sonarscan-dotnet@v2.1.2
+      with:
+        sonarProjectKey: Kanvas
+        sonarProjectName: Kanvas
+        sonarOrganization: ahmedjimale1998
+        dotnetBuildArguments: ./UserService
+        dotnetTestArguments: ./UserService.Test
