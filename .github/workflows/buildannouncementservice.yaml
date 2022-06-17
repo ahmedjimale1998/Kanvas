@@ -1,0 +1,44 @@
+name: Build AnnouncementService
+
+on:
+  push:
+      branches:
+      - fix-mapstructure
+env:
+  PROJECT_PATH: 'AnnouncementService/AnnouncementService.csproj'
+  TEST_PATH: 'AnnouncementService.Test/AnnouncementService.Test.csproj'
+  SONAR_TOKEN: ${{ secrets.SSONAR_TOKEN_ANNOUNCEMENT_SERVICE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+      
+    - name: 'Run tests'
+      run: dotnet test ${{ env.TEST_PATH }}
+
+        
+    # https://github.com/highbyte/sonarscan-dotnet
+    - name: SonarScanner for .NET 6
+      uses: highbyte/sonarscan-dotnet@v2.1.2
+      with:
+        sonarProjectKey: ahmedjimale1998_mail_service
+        sonarProjectName: announcement_service
+        sonarOrganization: ahmedjimale1998
+        dotnetBuildArguments: ./AnnouncementService
+        dotnetTestArguments: ./AnnouncementService.Test
