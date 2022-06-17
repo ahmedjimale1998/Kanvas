@@ -37,8 +37,8 @@ jobs:
     - name: SonarScanner for .NET 6
       uses: highbyte/sonarscan-dotnet@v2.1.2
       with:
-        sonarProjectKey: ahmedjimale1998_mail_service
-        sonarProjectName: announcement_service
+        sonarProjectKey: ahmedjimale1998_Announcement_Service
+        sonarProjectName: Announcement_Service
         sonarOrganization: ahmedjimale1998
         dotnetBuildArguments: ./AnnouncementService
         dotnetTestArguments: ./AnnouncementService.Test
