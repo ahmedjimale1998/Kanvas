@@ -7,7 +7,7 @@ on:
 env:
   PROJECT_PATH: 'AnnouncementService/AnnouncementService.csproj'
   TEST_PATH: 'AnnouncementService.Test/AnnouncementService.Test.csproj'
-  SONAR_TOKEN: ${{ secrets.SSONAR_TOKEN_ANNOUNCEMENT_SERVICE }}
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_ANNOUNCEMENT_SERVICE }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   
