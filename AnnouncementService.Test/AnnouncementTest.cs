@@ -18,6 +18,7 @@ namespace AnnouncementService.Test
             _context = new AnnouncementContext(optionsBuilder.Options);
         }
 
+
         [Fact]
         public void AddAnnouncementTest()
         {
