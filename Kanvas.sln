@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService.Test", "UserSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{D320F2CB-FBF0-4138-A762-B452B65ACA7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnouncementService", "AnnouncementService\AnnouncementService.csproj", "{E8667468-312D-491B-93C3-822FC713F953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnouncementService", "AnnouncementService\AnnouncementService.csproj", "{E8667468-312D-491B-93C3-822FC713F953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnouncementService.Test", "AnnouncementService.Test\AnnouncementService.Test.csproj", "{A082DFFD-EEA8-45AD-B4B4-008735087A56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E8667468-312D-491B-93C3-822FC713F953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8667468-312D-491B-93C3-822FC713F953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8667468-312D-491B-93C3-822FC713F953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A082DFFD-EEA8-45AD-B4B4-008735087A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A082DFFD-EEA8-45AD-B4B4-008735087A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A082DFFD-EEA8-45AD-B4B4-008735087A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A082DFFD-EEA8-45AD-B4B4-008735087A56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

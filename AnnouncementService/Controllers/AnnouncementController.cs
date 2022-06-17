@@ -44,6 +44,14 @@ namespace AnnouncementService.Controllers
         }
 
         [HttpGet]
+        [Route("getbyannouncementid/{id}")]
+        public async Task<IActionResult> GetAllAnnouncementByClassId(int id)
+        {
+            var announcement = await _announcementRepository.GetAllAnnouncementByClassId(id);
+            return Ok(_mapper.Map<List<AnnouncementReadDto>>(announcement));
+        }
+
+        [HttpGet]
         [Route("getall")]
         public async Task<IActionResult> GetAllAnnouncements()
         {
@@ -61,9 +69,9 @@ namespace AnnouncementService.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> Delete(Guid guid)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            await _announcementRepository.Delete(guid);
+            await _announcementRepository.Delete(id);
             return Ok();
         }
         /*

@@ -5,9 +5,11 @@ namespace AnnouncementService.Data
 {
     public class AnnouncementContext : DbContext
     {
-        public AnnouncementContext() { }
+        
 
-        public AnnouncementContext(DbContextOptions options) : base(options){ }
+        public AnnouncementContext(DbContextOptions options) : base(options)
+        {
+        }
 
         public DbSet<Announcement> Announcement { get; set; }
 
