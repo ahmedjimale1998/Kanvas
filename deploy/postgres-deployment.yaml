@@ -89,4 +89,4 @@ spec:
           value: announcementservice
         ports:
         - containerPort: 5432
-          name: maildb
+          name: announcementdb
