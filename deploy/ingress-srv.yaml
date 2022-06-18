@@ -24,5 +24,12 @@ spec:
                 name: kanvas-mailservice-srv
                 port:
                   number: 80
+          - path: /api/announcement
+            pathType: Prefix
+            backend:
+              service:
+                name: kanvas-announcementservice-srv
+                port:
+                  number: 80
 
 # https://www.youtube.com/watch?v=u948CURLDJA
