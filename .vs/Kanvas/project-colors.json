@@ -30,7 +30,17 @@
       "ProjectGuid": "c020365a-1b00-4c21-ae5e-3581d42f3f9c",
       "DisplayName": "IdentityServer",
       "ColorIndex": 5
+    },
+    "e8667468-312d-491b-93c3-822fc713f953": {
+      "ProjectGuid": "e8667468-312d-491b-93c3-822fc713f953",
+      "DisplayName": "AnnouncementService",
+      "ColorIndex": 6
+    },
+    "a082dffd-eea8-45ad-b4b4-008735087a56": {
+      "ProjectGuid": "a082dffd-eea8-45ad-b4b4-008735087a56",
+      "DisplayName": "AnnouncementService.Test",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 8
 }
