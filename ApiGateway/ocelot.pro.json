@@ -23,6 +23,29 @@
       ],
       "UpstreamPathTemplate": "/api/user/"
     },
+    //ANNOUNCEMENT API
+    {
+      "DownstreamPathTemplate": "/api/announcement{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kanvas-announcementservice-srv",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/announcement{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/announcement/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "kanvas-announcementservice-srv",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/announcement/"
+    },
 
     //Mail API
     {

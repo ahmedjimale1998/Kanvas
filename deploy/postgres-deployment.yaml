@@ -64,3 +64,29 @@ spec:
         ports:
         - containerPort: 5432
           name: maildb
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: announcementdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: announcementdb
+  template:
+    metadata:
+      labels:
+        app: announcementdb
+    spec:
+      containers:
+      - name: announcementdb
+        image: postgres:14.1-alpine
+        env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: announcementservice
+        ports:
+        - containerPort: 5432
+          name: maildb

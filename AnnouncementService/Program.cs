@@ -32,8 +32,8 @@ builder.Services.AddSwaggerGen(c =>
 
 if (builder.Environment.IsProduction())
 {
-    /*IConfiguration ProductionConfiguration = new ConfigurationBuilder()
-        .AddJsonFile("appsettings.Production.json", true, true)
+    IConfiguration ProductionConfiguration = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json", true, true)
         .Build();
 
     Console.WriteLine("--> Using kubernetes Postgress Db");
@@ -41,7 +41,7 @@ if (builder.Environment.IsProduction())
     {
         var connString = ProductionConfiguration.GetConnectionString("MyConnectionString");
         options.UseNpgsql(connString);
-    });*/
+    });
 }
 else
 {
