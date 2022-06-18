@@ -29,6 +29,7 @@ namespace AnnouncementService.Controllers
         {
             var announcement = _mapper.Map<Announcement>(announcementCreateDto);
             announcement.Id = Guid.NewGuid();
+            announcement.Date = DateTime.Now.ToUniversalTime();
             var savedUser = await _announcementRepository.Add(announcement);
             var announcementReadDto = _mapper.Map<AnnouncementReadDto>(savedUser);
 
