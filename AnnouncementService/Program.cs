@@ -74,7 +74,7 @@ if (app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-/*using (var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
@@ -82,7 +82,7 @@ if (app.Environment.IsDevelopment())
 
     var context = services.GetRequiredService<AnnouncementContext>();
     context.Database.Migrate();
-}*/
+}
 
 
 app.UseRouting();
