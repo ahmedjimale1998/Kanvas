@@ -84,72 +84,42 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
         network_mode: host
     
+    #ANNOUNCEMENTUSERVICE
+    announcementservice:
+        hostname: announcementservice
+        container_name: announcementservice
+        depends_on:
+            - "announcement_db"
+        build:
+            dockerfile: ./AnnouncementService.Dockerfile
+        ports:
+            - "4004:4004"
+        environment:
+            - ASPNETCORE_URLS=http://+:4004
+            - ConnectionStrings:MyConnectionString=Server=host.docker.internal;Port=5431;Database=postgres;User Id=postgres;Password=password;
+        network_mode: host
+
+
+    announcement_db:
+       hostname: announcement_db
+       image: postgres
+       restart: always
+       environment:
+            POSTGRES_DB: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: password
+       ports:
+            - 5431:5432
+       expose:
+            - "5431:5432"
+       volumes: 
+        - announcement_db:/var/lib/postgresql/data
 
 volumes:
     user_db:
         driver: local
     mail_db:
         driver: local
+    announcement_db:
+        driver: local
 
-
-
-
-
-
-# version: '3'
-
-# services: 
-#     userservice:
-#         hostname: userservice
-#         depends_on:
-#             - "user_db"
-#         build:
-#             dockerfile: ./UserService/Dockerfile
-#         ports:
-#             - "80:80"
-#         environment:
-#             - ASPNETCORE_URLS=http://+:80
-#             - ConnectionStrings:DefaultConnection=Server=host.docker.internal;Port=5432;Database=postgres;User Id=postgres;Password=password;
-#         network_mode: host
-
-
-#     user_db:
-#        hostname: user_db
-#        image: postgres
-#        restart: always
-#        environment:
-#             POSTGRES_DB: postgres
-#             POSTGRES_USER: postgres
-#             POSTGRES_PASSWORD: password
-#        ports:
-#             - 5432:5432
-#        expose:
-#             - "5433:5432"
-#        volumes: 
-#         - db:/var/lib/postgresql/data
-# volumes:
-#     db:
-#         driver: local
-
-
-
-    # user_db:
-    #     hostname: user_db
-    #     image: postgres
-    #     restart: always
-    #     container_name: user_db
-    #     environment:
-    #     - POSTGRES_USER=postgres
-    #     - POSTGRES_PASSWORD=postgres
-    #     - POSTGRES_DB=postgres.User
-    #     ports:
-    #     - "5433:5432"
-    #     expose:
-    #     - "5433:5432"
-    #     volumes: 
-    #     - user_db:/var/lib/postgresql/data
-    # volumes:
-    #     user_db:
-    #         driver: local
-
- 
